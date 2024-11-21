@@ -121,8 +121,8 @@ swiperSlides.forEach((slide) => {
 gsap.set(".swiper-slide .desc-wrap", {
   opacity: 0,
 });
-gsap.set(".project-slide .swiper-slide .desc", { opacity: 0 });
-gsap.set(".project-slide .swiper-slide .line", { width: 0 });
+gsap.set(".project-slide .swiper-slide .desc-wrap .desc", { opacity: 0 });
+gsap.set(".project-slide .swiper-slide .desc-wrap .line", { width: 0 });
 
 // Resize
 let mobile = false;
