@@ -31,7 +31,7 @@ function lenisStart() {
 lenisStart();
 
 // Load
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
   document.body.classList.add('loaded');
   handleResize();
 });
