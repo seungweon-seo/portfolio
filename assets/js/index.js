@@ -1,24 +1,5 @@
 const lenis = new Lenis();
 
-// DOM
-const linkLogo = document.querySelector('.header .link-logo');
-const logoName = document.querySelector('.header .name2');
-const btnMenu = document.querySelector('.header .btn-menu');
-const groupMobile = document.querySelector('.header .group-mobile');
-
-const scrollToLinks = [];
-const linkAbout = document.querySelectorAll('.header .link-about');
-const linkContact = document.querySelectorAll('.header .link-contact');
-scrollToLinks.push(...linkAbout, ...linkContact);
-
-const stickyProjects = document.querySelectorAll(
-  '.sc-project .sticky-project > div:not(.p6)'
-);
-
-const scProject = document.querySelector('.sc-project');
-const groupProject = document.querySelector('.sc-project .group-project');
-const projectCursor = document.querySelector('.sc-project .project-cursor');
-
 // Lenis
 function lenisStart() {
   lenis.on('scroll', ScrollTrigger.update);
@@ -37,6 +18,9 @@ window.addEventListener('load', () => {
 });
 
 // Mouseover
+const linkLogo = document.querySelector('.header .link-logo');
+const logoName = document.querySelector('.header .name2');
+
 logoName.addEventListener('animationend', () => {
   linkLogo.addEventListener('mouseover', () => {
     linkLogo.classList.add('on');
@@ -47,6 +31,9 @@ logoName.addEventListener('animationend', () => {
 });
 
 // Click menu
+const btnMenu = document.querySelector('.header .btn-menu');
+const groupMobile = document.querySelector('.header .group-mobile');
+
 btnMenu.addEventListener('click', handleClick);
 
 function handleClick() {
@@ -57,6 +44,11 @@ function handleClick() {
 }
 
 // ScrollTo
+const scrollToLinks = [];
+const linkAbout = document.querySelectorAll('.header .link-about');
+const linkContact = document.querySelectorAll('.header .link-contact');
+scrollToLinks.push(...linkAbout, ...linkContact);
+
 scrollToLinks.forEach((link) => {
   link.addEventListener('click', (e) => {
     const id = link.classList.contains('link-about') ? '#about' : '#footer';
@@ -81,6 +73,10 @@ function handleScrollTo(e, id, size) {
 }
 
 // Project timeline
+const stickyProjects = document.querySelectorAll(
+  '.sc-project .sticky-project > div:not(.p6)'
+);
+
 const projectTl = gsap.timeline({
   scrollTrigger: {
     trigger: '.group-project',
@@ -102,6 +98,8 @@ stickyProjects.forEach((el) => {
 });
 
 // Project mousemove
+const scProject = document.querySelector('.sc-project');
+
 scProject.addEventListener('mousemove', (e) => {
   const cursors = document.querySelectorAll(
     '.project-cursor [data-target="cursor"]'
@@ -117,6 +115,9 @@ scProject.addEventListener('mousemove', (e) => {
 });
 
 // Project mouseover
+const groupProject = document.querySelector('.sc-project .group-project');
+const projectCursor = document.querySelector('.sc-project .project-cursor');
+
 groupProject.addEventListener('mouseover', () => {
   projectCursor.classList.add('on');
 });
